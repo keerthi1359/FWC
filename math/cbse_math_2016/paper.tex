@@ -14,12 +14,16 @@
 \usepackage{enumitem}
 \usepackage{amsmath}
 \usepackage{amssymb}
-\usepackage{graphicx} % <-- ADD THIS (required for \includegraphics)
+\usepackage{graphicx} 
 \usepackage{graphicx}
 \usepackage{tikz}
 \usetikzlibrary{calc,positioning,arrows.meta}
 
 \setmainfont{Times New Roman}
+\newfontfamily\rupeefont{Arial Unicode MS}
+\newcommand{\rupee}{{\rupeefont ₹}}
+
+
 
 \fancypagestyle{firstpage}{
   \fancyhf{}
@@ -29,7 +33,7 @@
   \setlength{\headheight}{18mm}
 }
 
-\pagestyle{plain} % no header on other pages
+\pagestyle{plain}
 
 
 \begin{document}
