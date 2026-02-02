@@ -1,4 +1,5 @@
-*.aux
+
+	*.aux
 *.log
 *.out
 *.toc
@@ -7,3 +8,5 @@
 *.fdb_latexmk
 *.swp
 *.pdf
+!paper.pdf
+
