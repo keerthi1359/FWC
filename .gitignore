@@ -1,0 +1,9 @@
+
+# macOS + LaTeX junk
+.DS_Store
+**/.DS_Store
+*.swp
+*.aux
+*.log
+*.pdf
+!math/cbse_math_2016/paper.pdf
