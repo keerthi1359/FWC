@@ -1,0 +1,148 @@
+\documentclass[11pt,a4paper]{article}
+
+% ------------------ Page setup ------------------
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+
+% ------------------ Fonts & Math ------------------
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+
+% ------------------ Header/Footer ------------------
+\setlength{\headheight}{14pt}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[C]{\textit{Mathematics: Olympiad}}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+% ===================== FIRST PAGE TOP (LOGO + DETAILS) =====================
+\thispagestyle{empty}
+
+\noindent
+\begin{minipage}[t]{0.40\textwidth}
+    \raggedright
+    \includegraphics[width=3.8cm]{logo.jpeg}
+\end{minipage}
+\begin{minipage}[t]{0.60\textwidth}
+    \raggedleft
+    \begin{tabular}{@{}rl@{}}
+        \textbf{Name:} & Keerthi \\
+        \textbf{ID:}   & cometfwc045 \\
+        \textbf{Date:} & 09/02/2026
+    \end{tabular}
+\end{minipage}
+
+\vspace{1.0cm}
+
+% ===================== 1983 TITLE =====================
+\begin{center}
+    {\LARGE \textbf{Twenty-fourth International Olympiad, 1983}}
+\end{center}
+
+\vspace{0.3cm}
+
+% ===================== 1983 PROBLEMS =====================
+\begin{enumerate}[leftmargin=*, label=1983/\arabic*.]
+\item Find all functions $f$ defined on the set of positive real numbers which take positive real values and satisfy the conditions:
+\begin{enumerate}[leftmargin=*, label=(\roman*)]
+    \item $f(xf(y))=y f(x)$ for all positive $x,y$,
+    \item $f(x)\to 0$ as $x\to\infty$.
+\end{enumerate}
+
+\item Let $A$ be one of the two distinct points of intersection of two unequal coplanar circles $C_1$ and $C_2$ with centers $O_1$ and $O_2$, respectively. One of the common tangents to the circles touches $C_1$ at $P_1$ and $C_2$ at $P_2$, while the other touches $C_1$ at $Q_1$ and $C_2$ at $Q_2$. Let $M_1$ be the midpoint of $P_1Q_1$, and $M_2$ be the midpoint of $P_2Q_2$. Prove that $\angle O_1AO_2=\angle M_1AM_2$.
+
+\item Let $a,b$ and $c$ be positive integers, no two of which have a common divisor greater than $1$. Show that $2abc-ab-bc-ca$ is the largest integer which cannot be expressed in the form $xbc+yca+zab$, where $x,y$ and $z$ are non-negative integers.
+
+\item Let $ABC$ be an equilateral triangle and $E$ the set of all points contained in the three segments $AB$, $BC$ and $CA$ (including $A$, $B$ and $C$). Determine whether, for every partition of $E$ into two disjoint subsets, at least one of the two subsets contains the vertices of a right-angled triangle. Justify your answer.
+
+\item Is it possible to choose $1983$ distinct positive integers, all less than or equal to $10^5$, no three of which are consecutive terms of an arithmetic progression? Justify your answer.
+
+\item Let $a,b$ and $c$ be the lengths of the sides of a triangle. Prove that
+\[
+a^2b(a-b)+b^2c(b-c)+c^2a(c-a)\ge 0.
+\]
+Determine when equality occurs.
+\end{enumerate}
+
+% ===================== 1984 =====================
+\newpage
+\begin{center}
+    {\LARGE \textbf{Twenty-fifth International Olympiad, 1984}}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{enumerate}[leftmargin=*, label=1984/\arabic*.]
+\item Prove that $0\le yz+zx+xy-2xyz\le 7/27$, where $x,y$ and $z$ are non-negative real numbers for which $x+y+z=1$.
+
+\item Find one pair of positive integers $a$ and $b$ such that:
+\begin{enumerate}[leftmargin=*, label=(\roman*)]
+    \item $ab(a+b)$ is not divisible by $7$;
+    \item $(a+b)^7-a^7-b^7$ is divisible by $7^7$.
+\end{enumerate}
+Justify your answer.
+
+\item In the plane two different points $O$ and $A$ are given. For each point $X$ of the plane, other than $O$, denote by $a(X)$ the measure of the angle between $OA$ and $OX$ in radians, counterclockwise from $OA$ $(0\le a(X)<2\pi)$. Let $C(X)$ be the circle with center $O$ and radius of length $OX+a(X)/OX$. Each point of the plane is colored by one of a finite number of colors. Prove that there exists a point $Y$ for which $a(Y)>0$ such that its color appears on the circumference of the circle $C(Y)$.
+
+\item Let $ABCD$ be a convex quadrilateral such that the line $CD$ is a tangent to the circle on $AB$ as diameter. Prove that the line $AB$ is a tangent to the circle on $CD$ as diameter if and only if the lines $BC$ and $AD$ are parallel.
+
+\item Let $d$ be the sum of the lengths of all the diagonals of a plane convex polygon with $n$ vertices $(n>3)$, and let $p$ be its perimeter. Prove that
+\[
+n-3<\frac{2d}{p}<\left[\frac{n}{2}\right]\left[\frac{n+1}{2}\right]-2,
+\]
+where $[x]$ denotes the greatest integer not exceeding $x$.
+
+\item Let $a,b,c$ and $d$ be odd integers such that $0<a<b<c<d$ and $ad=bc$. Prove that if $a+d=2^k$ and $b+c=2^m$ for some integers $k$ and $m$, then $a=1$.
+\end{enumerate}
+
+% ===================== 1985 =====================
+\newpage
+\begin{center}
+    {\LARGE \textbf{Twenty-sixth International Olympiad, 1985}}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{enumerate}[leftmargin=*, label=1985/\arabic*.]
+\item A circle has center on the side $AB$ of the cyclic quadrilateral $ABCD$. The other three sides are tangent to the circle. Prove that $AD+BC=AB$.
+
+\item Let $n$ and $k$ be given relatively prime natural numbers, $k<n$. Each number in the set $M=\{1,2,\ldots,n-1\}$ is colored either blue or white. It is given that
+\begin{enumerate}[leftmargin=*, label=(\roman*)]
+    \item for each $i\in M$, both $i$ and $n-i$ have the same color;
+    \item for each $i\in M$, $i\ne k$, both $i$ and $|i-k|$ have the same color.
+\end{enumerate}
+Prove that all numbers in $M$ must have the same color.
+
+\item For any polynomial
+\[
+P(x)=a_0+a_1x+\cdots+a_kx^k
+\]
+with integer coefficients, the number of coefficients which are odd is denoted by $w(P)$. For $i=0,1,\ldots$, let $Q_i(x)=(1+x)^i$. Prove that if $i_1,i_2,\ldots,i_n$ are integers such that $0\le i_1<i_2<\cdots<i_n$, then
+\[
+w(Q_{i_1}+Q_{i_2}+\cdots+Q_{i_n})\ge w(Q_{i_1}).
+\]
+
+\item Given a set $M$ of $1985$ distinct positive integers, none of which has a prime divisor greater than $26$. Prove that $M$ contains at least one subset of four distinct elements whose product is the fourth power of an integer.
+
+\item A circle with center $O$ passes through the vertices $A$ and $C$ of triangle $ABC$ and intersects the segments $AB$ and $BC$ again at distinct points $K$ and $N$, respectively. The circumscribed circles of the triangles $ABC$ and $EBN$ intersect at exactly two distinct points $B$ and $M$. Prove that angle $OMB$ is a right angle.
+
+\item For every real number $x_1$, construct the sequence $x_1,x_2,\ldots$ by setting
+\[
+x_{n+1}=x_n\left(x_n+\frac{1}{n}\right)\quad \text{for each } n\ge 1.
+\]
+Prove that there exists exactly one value of $x_1$ for which
+\[
+0<x_n<x_{n+1}<1
+\]
+for every $n$.
+\end{enumerate}
+
+\end{document}
