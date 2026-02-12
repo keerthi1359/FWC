@@ -1,0 +1,284 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[a4paper,margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{array}
+
+
+\definecolor{myblue}{RGB}{0,70,180}
+
+\titleformat{\section}
+  {\color{myblue}\Large\bfseries}
+  {}
+  {0pt}
+  {}
+
+\titleformat{\subsection}
+  {\color{myblue}\large\bfseries}
+  {}
+  {0pt}
+  {}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rfoot{
+
+
+}
+
+
+\newcommand{\StudentName}{Keerthi.M}
+\newcommand{\RollNo}{COMETFWC045}
+\newcommand{\ExpDate}{\today}
+
+\begin{document}
+
+
+\noindent
+\begin{minipage}[t]{0.55\textwidth}
+  \vspace{0pt}
+  \includegraphics[width=0.95\linewidth]{logo.jpeg}
+\end{minipage}
+\begin{minipage}[t]{0.44\textwidth}
+  \vspace{0pt}
+  \begin{flushright}
+    \textbf{Name:} \StudentName\\
+    \textbf{Roll No:} \RollNo\\
+    \textbf{Date:} \ExpDate
+  \end{flushright}
+\end{minipage}
+
+\vspace{6pt}
+
+
+\begin{center}
+{\color{myblue}\LARGE \textbf{GATE 2010 CS, $9^{th}$ Question Analysis}}
+\end{center}
+
+\vspace{8pt}
+
+\section{Question 9}
+\textbf{(GATE 2010 CS, Question 9)}\\
+The Boolean expression for the output $f$ of the multiplexer shown below is:
+
+\begin{center}
+\includegraphics[width=0.75\textwidth]{q9.jpeg}
+\end{center}
+
+\noindent
+\textbf{Given:}
+\begin{itemize}[leftmargin=1.2em]
+\item Select lines: $S_1=P$, $S_0=Q$
+\item Data inputs: $I_0=R$, $I_1=\overline{R}$, $I_2=\overline{R}$, $I_3=R$
+\end{itemize}
+
+\noindent
+\textbf{Required:} Find the Boolean expression for $f$ and verify it using hardware.
+
+
+\section{Question Analysis}
+
+\begin{itemize}[leftmargin=1.2em]
+\item Standard 4:1 MUX output equation:
+\[
+f = I_0\overline{S_1}\overline{S_0}+I_1\overline{S_1}S_0+I_2S_1\overline{S_0}+I_3S_1S_0
+\]
+\item Substitute $S_1=P$, $S_0=Q$:
+\[
+f = I_0\overline{P}\overline{Q}+I_1\overline{P}Q+I_2P\overline{Q}+I_3PQ
+\]
+\item Substitute $I_0=R$, $I_1=\overline{R}$, $I_2=\overline{R}$, $I_3=R$:
+\[
+f = R\overline{P}\overline{Q}+\overline{R}\,\overline{P}Q+\overline{R}\,P\overline{Q}+RPQ
+\]
+\item Simplified result:
+\[
+\boxed{f = P \oplus Q \oplus R}
+\]
+\end{itemize}
+
+
+\section{Truth Table}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{cccc}
+\toprule
+$P$ & $Q$ & $R$ & $f=P\oplus Q\oplus R$ \\
+\midrule
+0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 \\
+0 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Hardware Implementation}
+The above problem is implemented and tested in hardware using Arduino UNO board. Here we used 7447 and seven segment to display output F is 1 or 0 for input A B C as per truth table and verified the expression.
+
+\section{Required Components \& Pin Connections}
+
+\subsection{Components}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{cl}
+\toprule
+S.No & Component \\
+\midrule
+1 & Arduino UNO Board \\
+2 & Breadboard \\
+3 & 7447 IC (BCD to 7-segment driver) \\
+4 & Seven Segment Display (Common Anode) \\
+5 & Resistors: 220$\Omega$ (for segments) \\
+6 & Jumper Wires \\
+7 & USB Cable \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{Arduino $\rightarrow$ 7447 (BCD Inputs)}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lll}
+\toprule
+7447 Input & 7447 Pin & Arduino Pin \\
+\midrule
+A (LSB) & 7 & D5 \\
+B       & 1 & D6 \\
+C       & 2 & D7 \\
+D (MSB) & 6 & D8 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\subsection{7447 Power \& Control Pins}
+\begin{itemize}[leftmargin=1.2em]
+\item 7447 pin 16 (VCC) $\rightarrow$ +5V
+\item 7447 pin 8 (GND) $\rightarrow$ GND
+\item pin 3 (LT) $\rightarrow$ +5V
+\item pin 4 (BI/RBO) $\rightarrow$ +5V
+\item pin 5 (RBI) $\rightarrow$ +5V
+\end{itemize}
+
+\subsection{7447 $\rightarrow$ Seven Segment (Common Anode)}
+\begin{itemize}[leftmargin=1.2em]
+\item Connect both COM pins of the 7-segment display $\rightarrow$ +5V
+\item Connect 7447 outputs to segments \textbf{through 220$\Omega$ resistors}:
+\end{itemize}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{lll}
+\toprule
+7447 Output & 7447 Pin & Segment \\
+\midrule
+a & 13 & A \\
+b & 12 & B \\
+c & 11 & C \\
+d & 10 & D \\
+e & 9  & E \\
+f & 15 & F \\
+g & 14 & G \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+
+\section{Logic Description}
+\begin{itemize}[leftmargin=1.2em]
+\item The MUX output is:
+\[
+f = P\oplus Q\oplus R
+\]
+\item To show $f$ on 7-segment using 7447, we send BCD:
+\[
+f=0 \Rightarrow DCBA=0000 \Rightarrow \text{Display }0
+\]
+\[
+f=1 \Rightarrow DCBA=0001 \Rightarrow \text{Display }1
+\]
+\end{itemize}
+
+
+\section{Arduino Source Code (Auto Cycling)}
+
+\noindent\textbf{Note:} This program cycles all $PQR$ combinations from 000 to 111 and displays $f$.
+
+\begin{verbatim}
+
+
+const int A_pin = 5;   // -> 7447 A (pin 7)
+const int B_pin = 6;   // -> 7447 B (pin 1)
+const int C_pin = 7;   // -> 7447 C (pin 2)
+const int D_pin = 8;   // -> 7447 D (pin 6)
+
+void setup() {
+  pinMode(A_pin, OUTPUT);
+  pinMode(B_pin, OUTPUT);
+  pinMode(C_pin, OUTPUT);
+  pinMode(D_pin, OUTPUT);
+}
+
+void loop() {
+  for (int n = 0; n < 8; n++) {
+    int P = (n >> 2) & 1;
+    int Q = (n >> 1) & 1;
+    int R = (n >> 0) & 1;
+
+    int f = P ^ Q ^ R;
+
+    // f=0 -> BCD 0000, f=1 -> BCD 0001
+    digitalWrite(A_pin, f);
+    digitalWrite(B_pin, LOW);
+    digitalWrite(C_pin, LOW);
+    digitalWrite(D_pin, LOW);
+
+    delay(1000);
+  }
+}
+\end{verbatim}
+
+
+\section*{Setup / Output Image}
+\begin{center}
+\includegraphics[width=0.8\textwidth]{img1.jpeg}
+\end{center}
+
+\section{Experimental Truth Table}
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{cccc}
+\toprule
+$P$ & $Q$ & $R$ & Observed $f$ (7-seg) \\
+\midrule
+0 & 0 & 0 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 1 & 0 & 1 \\
+0 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1 \\
+1 & 0 & 1 & 0 \\
+1 & 1 & 0 & 0 \\
+1 & 1 & 1 & 1 \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Conclusion}
+From the truth table and hardware verification, the multiplexer output is confirmed as:
+\[
+\boxed{f = P \oplus Q \oplus R}
+\]
+Hence the correct option is the XOR of all three inputs.
+
+\end{document}
