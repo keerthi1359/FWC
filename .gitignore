@@ -7,3 +7,5 @@
 *.log
 *.pdf
 !math/cbse_math_2016/paper.pdf
+!GATE/**/*.pdf
+
